@@ -90,37 +90,27 @@ The project combines Python-based data preparation, SQL business analysis, a Log
 
 
 
+
 ###### **Machine Learning Results**
 
+The model uses category and publishing metadata, description presence, and description length to estimate the probability that a video belongs to the high-potential class.
 
-
-The model uses category and publishing metadata, description presence, and description length to estimate high-potential probability.
-
-
-
-Reported evaluation results at the selected 0.35 decision threshold:
-
-
+**Corrected evaluation results at the selected 0.35 decision threshold:**
 
 | Metric | Result |
+|--------|--------|
+| ROC-AUC | 0.7040 |
+| Precision | 49.55% |
+| Recall | 41.26% |
+| F1 score | 45.02% |
+| Videos flagged in the held-out test set | 662 out of 3,179 |
 
-\---------------------
+These results are based on the corrected model run and its held-out test set. The 0.35 decision threshold represents a screening choice for this project, balancing precision and recall rather than guaranteeing an optimal business outcome.
 
-| ROC-AUC | 0.7026 |
+The number of videos flagged refers to predictions made on the held-out test set. It is distinct from the 3,974 videos labelled high-potential in the eligible dataset.
 
-| Precision | 48.70% |
+The model provides a prioritisation signal, not a guarantee that a video will succeed. Its performance and usefulness should be validated on genuinely future-dated data before operational use.
 
-| Recall | 40.00% |
-
-| F1 score | 43.92% |
-
-
-
-The 0.35 threshold is a practical screening choice for this project, not a universally optimal threshold. These metrics are based on the held-out test set and should not be confused with the number of videos flagged when the model scores the complete dataset.
-
-
-
-The model provides a prioritization signal, not a guarantee that a video will succeed. Its performance and usefulness should be validated on new data before operational use.
 
 
 
